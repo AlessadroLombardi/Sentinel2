@@ -6,8 +6,9 @@ import os
 
 class Image:
     def __init__(self, file_name: str):
-        # Percorso assoluto alla cartella "data/images"
-        image_folder = '/Users/imac/Documents/Python/data/images'
+        # Risali due livelli dalla cartella corrente per arrivare a Python/
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # Tre livelli su
+        image_folder = os.path.join(base_dir, 'data', 'images')  # Percorso relativo alla cartella "images"
 
         # Costruisci il percorso assoluto del file
         file_path = os.path.join(image_folder, file_name)

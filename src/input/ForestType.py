@@ -6,8 +6,9 @@ import os
 
 class ForestType:
     def __init__(self, file_name: str):
-        # Percorso assoluto alla cartella "data/masks"
-        masks_folder = '/Users/imac/Documents/Python/data/masks'
+        # Risali due livelli dalla cartella corrente per arrivare a Python/
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # Tre livelli su
+        masks_folder = os.path.join(base_dir, 'data', 'masks')  # Percorso relativo alla cartella "masks"
 
         # Costruisci il percorso assoluto del file
         file_path = os.path.join(masks_folder, file_name)

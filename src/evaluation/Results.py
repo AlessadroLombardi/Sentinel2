@@ -67,14 +67,11 @@ class Results:
             round(inertia_gmm,5)
         ]
 
-    def get_risultati(self):
-        return self.risultati
-
     def stampa_risultati(self):
         print("\n======== RISULTATI DEL CLUSTERING ========\n")
 
         df = self.risultati.copy()
-        totale = len(df)
+        totale = 200
         df['NOME IMMAGINE'] = [
             f"{nome} ({i+1}/{totale})"
             for i, nome in enumerate(df['NOME IMMAGINE'])
@@ -83,8 +80,8 @@ class Results:
         print(df.to_string(index=False))
 
     def stampa_non_processate(self):
+        print("\n======== IMMAGINI NON PROCESSATE ========")
         if not self.non_processate.empty:
-            print("\n======== IMMAGINI NON PROCESSATE ========")
             print(self.non_processate.to_string(index=False))
         else:
-            print("\nTutte le immagini sono state processate correttamente.")
+            print("\nTutte le immagini sono state processate correttamente.\n")
