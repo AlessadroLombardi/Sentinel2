@@ -1,0 +1,14 @@
+{
+    "use_all_data": false,
+    "files": [
+      "geojson_205232.tif",
+      "geojson_205275.tif",
+      "geojson_209149.tif",
+      "geojson_221968.tif",
+      "geojson_252082.tif"
+    ],
+    "models": ["KMeans", "GMM"],
+    "metrics": ["Inertia"],
+    "max_clusters": 10
+  }
+  
